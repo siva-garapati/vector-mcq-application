@@ -28,7 +28,7 @@ const addAssesment = async(req,res) =>{
 const getAssesment = async(req,res)=>{
     try{
         const assesment = await Assesment.findById(req.params.id)
-        console.log(assesment)
+        // console.log(assesment)
         res.json({assesment})
     }
     catch(err){
