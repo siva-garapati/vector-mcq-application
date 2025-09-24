@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const router = require('./routes/routes')
+const cors = require("cors")
 
 mongoose.connect('mongodb://localhost:27017/mcqdb').then(()=>{
     console.log('mongoDb connected')
@@ -9,6 +10,8 @@ mongoose.connect('mongodb://localhost:27017/mcqdb').then(()=>{
 })
 
 const app = express()
+
+app.use(cors())
 
 app.use(express.json())
 
