@@ -7,6 +7,11 @@ const App = () => {
   return (
     <BrowserRouter>
     <Routes>
+      <Route path='/' element={
+        <div>
+          Welcome
+        </div>
+      }/>
       <Route path='/:assesmentId' element={<Home/>}/>
     </Routes>
     </BrowserRouter>
