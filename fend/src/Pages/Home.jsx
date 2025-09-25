@@ -27,7 +27,7 @@ const Home = () => {
             !data && <IdInput idObj={{id, setId}} setData={setData} startTest={startTest}/>
         }
         {
-            data && <Assesment data={data}/>
+            data && <Assesment data={data} id={id}/>
         }
     </div>
   )
