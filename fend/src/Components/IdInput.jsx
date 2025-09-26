@@ -1,20 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import "./IdInput.css";
 
-
-const IdInput = ({idObj, setData, startTest}) => {
-
+const IdInput = ({ idObj, setData, startTest }) => {
   // console.log(startTest, setData)
 
-    const {id, setId} = idObj
-    
-    
+  const { id, setId } = idObj;
+
   return (
     <div>
-        <label htmlFor="id">Vector Id</label>
-        <input type="text" placeholder='Enter Id' onChange={(e)=>setId(e.target.value)} value={id}/>
-        <button onClick={startTest} disabled={!id}>Start Test</button>
-    </div>
-  )
-}
+      <form action={startTest}>
+        <div className="form">
+          <label htmlFor="id">Vector Id</label>
+          <input
+            type="text"
+            placeholder="Enter Id (9 characters)"
+            required
+            pattern="\w{9,9}"
+            onChange={(e) => setId(e.target.value)}
+            value={id}
+            title="Id must be 9 characters"
+          />
+          <span className="validity"></span>
 
-export default IdInput
+          <button disabled={!id} type="submit">
+            Start Test
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default IdInput;
