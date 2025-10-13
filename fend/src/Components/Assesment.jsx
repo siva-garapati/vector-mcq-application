@@ -4,9 +4,7 @@ import axios from "axios";
 import CorrectAnswers from "./CorrectAnswers";
 
 const Assesment = ({ data, id }) => {
-  const [choosenOptions, setChoosenOptions] = useState(
-
-  );
+  const [choosenOptions, setChoosenOptions] = useState();
   const [score, setScore] = useState('')
 
   const setOption = (e, qId) => {
@@ -65,7 +63,7 @@ const Assesment = ({ data, id }) => {
 
       <button onClick={submiTest}>Submit Test</button>
       {
-        score && <CorrectAnswers score={score}/>
+        <CorrectAnswers score={score}/>
       }
     </div>
   );
