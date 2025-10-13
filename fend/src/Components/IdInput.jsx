@@ -6,6 +6,8 @@ const IdInput = ({ idObj, setData, startTest }) => {
 
   const { id, setId } = idObj;
 
+  
+
   return (
     <div>
       <form action={startTest}>
@@ -13,14 +15,14 @@ const IdInput = ({ idObj, setData, startTest }) => {
           <label htmlFor="id">Vector Id</label>
           <input
             type="text"
-            placeholder="Enter Id (9 characters)"
+            placeholder="Enter Id"
             required
-            pattern="\w{9,9}"
+            // pattern="\w{9,9}"
             onChange={(e) => setId(e.target.value)}
             value={id}
-            title="Id must be 9 characters"
+            // title="Id must be 9 characters"
           />
-          <span className="validity"></span>
+          {/* <span className="validity"></span> */}
 
           <button disabled={!id} type="submit">
             Start Test
