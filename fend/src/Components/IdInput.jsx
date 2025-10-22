@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import "./IdInput.css";
 
 const IdInput = ({ idObj, setData, startTest }) => {
   // console.log(startTest, setData)
 
   const { id, setId } = idObj;
 
-  
-
   return (
     <div>
       <form action={startTest}>
-        <div className="form">
+        <div className="">
           <label htmlFor="id">Vector Id</label>
           <input
             type="text"
@@ -24,7 +21,7 @@ const IdInput = ({ idObj, setData, startTest }) => {
           />
           {/* <span className="validity"></span> */}
 
-          <button disabled={!id} type="submit">
+          <button disabled={!id} type="submit" className="border-2 border-blue-950 p-1 bg-amber-300 cursor-pointer">
             Start Test
           </button>
         </div>

@@ -13,9 +13,13 @@ const Home = () => {
 
     const startTest=()=>{
         console.log(assesmentId, id)
-        axios.get(`http://localhost:5000/get/${assesmentId}`).then((res)=>{
+        axios.post(`http://localhost:5000/get`,{userId : id, assesmentId}).then((res)=>{
             console.log('data found',res.data);
-            setData(res.data.assesment)
+            if (res.data?.assesment == undefined){
+                alert('already submitted')
+            }else{
+                setData(res.data.assesment)
+            }
         }).catch((err)=>{
             console.log(err.message)
         })

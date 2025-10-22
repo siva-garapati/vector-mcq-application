@@ -1,3 +1,1 @@
-if ('') {
-    console.log('k')
-}
+console.log(Boolean([]))
